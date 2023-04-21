@@ -1,0 +1,74 @@
+.footer {
+  background-color: $accentBgColor;
+  @include adaptiveValue('padding-top', 103, 80);
+  @include adaptiveValue('padding-bottom', 95, 75);
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: rem(30);
+    font-weight: 400;
+    line-height: 170%;
+
+    @media (max-width: $mobileSmall) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__left {
+    max-width: rem(300);
+  }
+
+  &__descr {
+    @include adaptiveValue('margin-top', 50, 30);
+    @include adaptiveValue('margin-bottom', 96, 50);
+  }
+
+  &__title {
+    font-weight: 600;
+    line-height: calc(20 / 16);
+    text-transform: uppercase;
+  }
+
+  &__menu {
+    @include adaptiveValue('margin-top', 20, 18);
+    @include adaptiveValue('margin-bottom', 47, 35);
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: rem(15);
+    }
+    &-link {
+      font-size: rem(14);
+      line-height: calc(17 / 14);
+    }
+  }
+
+  &__subtitle {
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 150%;
+    color: $secondColor;
+    font-style: normal;
+    @include adaptiveValue('margin-bottom', 14, 12);
+  }
+
+  &__contacts {
+    address {
+      @include adaptiveValue('margin-top', 20, 18);
+      display: flex;
+      flex-direction: column;
+    }
+    a:not(:last-child) {
+      font-style: normal;
+      font-size: 14px;
+      line-height: 150%;
+      @include adaptiveValue('margin-bottom', 43, 30);
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-between;
+  }
+}
