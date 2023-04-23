@@ -1,10 +1,19 @@
 <div id="popup" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрити</button>
+			<button data-close type="button" class="popup__close"><span></span></button>
 			<div class="popup__text">
-				Text
+				<h2 class="title popup__title ">
+					Leave your details <br> <span>and I will call you back</span>
+				</h2>
 			</div>
+
+			<form>
+				<input type="tel" name="phoneNumb" data-error="Error" placeholder="Phone" class="input">
+				<input type="text" name="userName" data-error="Error" placeholder="Name" class="input">
+				<button type="submit" class="button">Send</button>
+			</form>
+
 		</div>
 	</div>
 </div>

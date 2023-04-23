@@ -1,0 +1,19 @@
+.question {
+  padding: rem(73) 0;
+
+  &__inner {
+    display: flex;
+    gap: rem(35);
+    align-items: center;
+    justify-content: space-evenly;
+    @media (max-width: $mobileSmall) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__btn {
+    @media (max-width: $mobileSmall) {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.intro {
+  background: url(../img/intro/intro.jpg) right bottom / contain no-repeat;
+  margin-top: rem(-101);
+  @include adaptiveValue('padding-top', 203, 150);
+  @include adaptiveValue('min-height', 750, 700);
+
+  &__inner {
+    @include adaptiveValue('max-width', 480, 300);
+  }
+
+  &__title {
+    font-family: 'BNChester';
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(64 / 66);
+    letter-spacing: 0.01em;
+    color: #3d3737;
+    @include adaptiveValue('font-size', 66, 38);
+  }
+
+  &__text {
+    font-weight: 400;
+    line-height: 170%;
+    @include adaptiveValue('margin-top', 32, 28);
+    @include adaptiveValue('margin-bottom', 54, 38);
+    max-width: rem(382);
+  }
+  &__btn {
+    @media (max-width: $mobileSmall) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    background-size: cover;
+  }
+
+  @media (max-width: $mobileSmall) {
+    position: relative;
+    background-image: url(../img/intro/intro-min.jpg);
+    background-size: contain;
+  }
+}

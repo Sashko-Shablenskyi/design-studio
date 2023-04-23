@@ -1,0 +1,38 @@
+.about {
+  padding: rem(71) 0;
+  background-color: $accentBgColor;
+  &__inner {
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    @media (max-width: $mobile) {
+      display: block;
+      @include adaptiveValue('margin-bottom', 40, 20);
+    }
+  }
+
+  &__text {
+    @include adaptiveValue('padding-right', 100, 0);
+    font-weight: 400;
+    line-height: 170%;
+
+    p:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 40, 20);
+    }
+
+    @media (max-width: $mobile) {
+      padding: 0;
+    }
+  }
+}

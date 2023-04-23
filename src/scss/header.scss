@@ -3,24 +3,48 @@
 //====================================================================================================
 
 .header {
+  position: relative;
+  z-index: 10;
   &__inner {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     min-height: rem(101);
     font-weight: 500;
+    @include adaptiveValue('gap', 68, 40);
   }
 
-  &__left {
+  &__wrapper {
     display: flex;
     align-items: center;
-    @include adaptiveValue('gap', 68, 50);
+    justify-content: space-between;
+    width: 100%;
+
+    @media (max-width: $mobile) {
+      position: fixed;
+      top: rem(101);
+      right: -100%;
+      width: 80vw;
+      height: calc(100vh - rem(101));
+      background-color: $accentColor;
+      transition: all 0.3s linear;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: column;
+      .menu-open & {
+        right: 0;
+      }
+    }
   }
 
   &__menu {
     &-list {
       display: flex;
       @include adaptiveValue('gap', 48.5, 30);
+
+      @media (max-width: $mobile) {
+        flex-direction: column;
+      }
     }
 
     &-item {
@@ -44,6 +68,10 @@
           left: 0;
         }
       }
+
+      @media (max-width: $mobile) {
+        font-size: rem(24);
+      }
     }
   }
 
@@ -52,12 +80,29 @@
     align-items: center;
     @include adaptiveValue('gap', 45, 30);
     line-height: calc(19 / 16);
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      font-size: rem(22);
+    }
+  }
+
+  &__leng {
+    background-color: transparent;
+    option {
+      background-color: inherit;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: rem(20);
+    }
   }
 }
 
 //Burger
 .icon-menu {
   display: none;
+  margin-left: auto;
   @media (max-width: $mobile) {
     display: block;
     position: relative;

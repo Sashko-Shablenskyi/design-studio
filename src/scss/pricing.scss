@@ -1,0 +1,67 @@
+.pricing {
+  padding: rem(102) 0;
+  font-family: 'BNChester';
+  font-weight: 400;
+  text-align: center;
+  font-style: normal;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: rem(40);
+    margin: rem(70) 0 0;
+  }
+
+  &__box {
+    background: $pricingBgColor;
+    border: 2px solid $accentColor;
+    border-radius: 10px;
+    padding: rem(32) rem(38);
+    min-width: rem(270);
+
+    &--colored {
+      background-color: $accentColor;
+      color: #fff;
+
+      .pricing__period {
+        &::after {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
+  &__name {
+    font-size: rem(24);
+    line-height: calc(23 / 24);
+  }
+
+  &__value {
+    font-size: rem(44);
+    line-height: calc(43 / 44);
+    margin: rem(31) 0 rem(7);
+  }
+
+  &__period {
+    font-size: rem(18);
+    line-height: calc(17 / 18);
+
+    &::after {
+      content: '';
+      display: block;
+      height: rem(2);
+      background-color: $pricingDeviderColor;
+      margin: rem(27) 0;
+    }
+  }
+
+  &__include {
+    margin: 0 0 rem(54);
+    &-name {
+      font-weight: 500;
+      font-size: rem(15);
+      line-height: 180%;
+    }
+  }
+}

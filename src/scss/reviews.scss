@@ -1,0 +1,94 @@
+.reviews {
+  @include adaptiveValue('padding-top', 60, 58);
+  @include adaptiveValue('padding-bottom', 60, 36);
+  background-color: $accentBgColor;
+
+  &__wrapper {
+    margin: rem(87) 0 0;
+  }
+
+  .slide {
+    position: relative;
+    @include adaptiveValue('padding-left', 91, 20);
+    @include adaptiveValue('padding-right', 41, 20);
+    @include adaptiveValue('padding-top', 36, 20);
+    @include adaptiveValue('padding-bottom', 36, 20);
+    background-color: #fff;
+    border-radius: rem(10);
+    cursor: grab;
+
+    &__top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(30);
+      position: relative;
+      z-index: 1;
+      font-size: rem(20);
+      font-weight: 500;
+      line-height: calc(24 / 20);
+    }
+
+    &__ava {
+      border-radius: 50%;
+      overflow: hidden;
+      height: rem(172);
+      width: rem(172);
+      object-fit: cover;
+    }
+
+    &__name {
+      margin: rem(30) 0 rem(7);
+      min-width: rem(230);
+    }
+
+    &__position {
+      color: $secondColor;
+      min-width: rem(230);
+    }
+
+    &__social {
+      display: flex;
+      gap: rem(16);
+      margin: rem(40) 0 0;
+    }
+
+    &__text {
+      font-weight: 400;
+      line-height: 170%;
+      margin: rem(30) 0 0;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: rem(1);
+      background-color: $pricingDeviderColor;
+      position: absolute;
+      left: 0;
+      top: 38%;
+      z-index: 0;
+    }
+  }
+}
+
+.swiper-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(20);
+  margin: rem(42) 0 0;
+
+  &-bullet {
+    display: block;
+    height: rem(14);
+    width: rem(14);
+    background-color: $sliderBullet;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &-active {
+      background-color: $accentColor;
+    }
+  }
+}
